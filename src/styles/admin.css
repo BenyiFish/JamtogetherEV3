@@ -1,0 +1,95 @@
+/* styles/admin.css */
+
+.admin-container {
+  /* 1. Padding general */
+  padding: 2rem;
+  
+  /* 2. IMPORTANTE: Padding superior específico para evitar superposición con Navbar */
+  /* Debe ir DESPUÉS del padding general */
+  padding-top: 140px; 
+  
+  text-align: center;
+  color: white; 
+  min-height: 60vh;
+}
+
+.admin-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ffcb05; 
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.users-table {
+  width: 90%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  background-color: #222; 
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  margin: 0 auto; /* Centrar la tabla horizontalmente */
+}
+
+.users-table th, 
+.users-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+.users-table th {
+  background-color: #333;
+  color: #ffcb05;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.users-table tr:hover {
+  background-color: #2a2a2a;
+}
+
+.users-table td {
+  color: #ddd;
+}
+
+/* Botón de eliminar normal */
+.btn-delete {
+  background-color: #dc3545; 
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-delete:hover {
+  background-color: #a71d2a;
+}
+
+/* NUEVO: Estilo para botón protegido (Admins) */
+.btn-disabled {
+    background-color: #6c757d; /* Gris */
+    color: #ccc; 
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: not-allowed; /* Icono de prohibido */
+    opacity: 0.7;
+}
+
+.no-users {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #aaa;
+}

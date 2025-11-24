@@ -1,0 +1,17 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ocupa toda la altura de la pantalla */
+}
+
+/* Contenido principal que empuja el footer */
+.app-container > main {
+  flex: 1 0 auto; 
+}
+
+/* Footer siempre al final */
+footer {
+  flex-shrink: 0;
+  width: 100%;
+}
+

@@ -1,0 +1,19 @@
+/* Contenedor principal ocupa toda la pantalla y organiza columna */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ocupa toda la altura de la ventana */
+  width: 100%;
+}
+
+/* Contenido principal crece para empujar el footer */
+.main-content {
+  flex: 1 0 auto; /* crece según contenido */
+  width: 100%;
+}
+
+/* Footer al final, no se encoge */
+footer.footer {
+  flex-shrink: 0;
+  width: 100%;
+}

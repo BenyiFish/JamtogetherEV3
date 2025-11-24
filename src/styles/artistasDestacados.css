@@ -1,0 +1,295 @@
+/* ==========================
+   Contenedor principal
+   ========================== */
+.artistas-destacados {
+  padding: 60px;
+  background-color: #262525;
+  color: white;
+  text-align: center;
+  padding-top: 0;
+}
+
+/* Título de sección */
+.artistas-destacados h2 {
+  font-size: 25px;
+  margin-bottom: 30px;
+  display: inline-block;
+  border-bottom: 3px solid #e38e04;
+  padding-bottom: 10px;
+}
+
+.artistas-destacados .card-content .nombreBanda {
+  color: white;
+}
+
+/* Contenedor de cards */
+.artistas-destacados .cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* ==========================
+   Cards - Estilo Vertical (Home)
+   ========================== */
+.artistas-destacados .cards-container.vertical {
+  flex-direction: row;
+}
+
+.artistas-destacados .card.vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  padding: 20px;
+  width: 180px;
+  height: 350px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artistas-destacados .card.vertical:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.artistas-destacados .card.vertical .card-img {
+  width: 100%;
+  height: 130px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.artistas-destacados .card.vertical h3 {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.artistas-destacados .card.vertical h4.estiloBanda {
+  font-size: 14px;
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+.artistas-destacados .card.vertical p.descripcionBanda {
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.artistas-destacados .card.vertical button {
+  margin-top: auto;
+  background-color: #e38e04;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  width: 100%;
+  height: 38px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.artistas-destacados .card.vertical button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* ==========================
+   Cards - Estilo Horizontal (BuscarBandas) - Ajustadas
+   ========================== */
+.artistas-destacados .cards-container.horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.artistas-destacados .card.horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  min-width: 250px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artistas-destacados .card.horizontal img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.artistas-destacados .card.horizontal .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.artistas-destacados .card.horizontal h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.artistas-destacados .card.horizontal h4.estiloBanda {
+  font-size: 14px;
+  color: #fff;
+  margin: 2px 0;
+}
+
+.artistas-destacados .card.horizontal p.descripcionBanda {
+  font-size: 14px;
+  color: #ddd;
+  margin: 3px 0;
+}
+
+.artistas-destacados .card.horizontal button {
+  width: 80%;
+  margin-top: 8px;
+}
+
+/* ==========================
+   Detalle Expandible
+   ========================== */
+.artistas-destacados .banda-detalle {
+  background-color: #111;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+  color: #ddd;
+  animation: fadeIn 0.4s ease;
+}
+
+.artistas-destacados .banda-detalle p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.artistas-destacados .banda-detalle button {
+  background-color: #e38e04;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.artistas-destacados .banda-detalle button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Animación suave para mostrar el detalle */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.artistas-destacados .tituloArtistas {
+  text-align: center;
+  color: white;
+}
+
+/* ==========================
+   MODAL (Mini página emergente)
+   ========================== */
+.artistas-destacados .modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.artistas-destacados .modal-content {
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 12px;
+  padding: 25px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+.artistas-destacados .modal-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.artistas-destacados .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.artistas-destacados .close-btn:hover {
+  color: #e38e04;
+}
+
+.artistas-destacados .modal-extra p {
+  font-size: 14px;
+  color: #ccc;
+  margin: 6px 0;
+}
+
+.artistas-destacados .contact-btn {
+  background-color: #e38e04;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.artistas-destacados .contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+/* Animaciones suaves */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.artistas-destacados .tituloBanda-card { margin-top: -5px; font-size: 50px; }
+.artistas-destacados .descripcionBanda-card { margin-top: -5px; }
+.artistas-destacados .estiloCiudad-card { margin-top: -10px; }

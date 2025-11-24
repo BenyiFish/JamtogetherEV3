@@ -1,0 +1,80 @@
+/* Header principal */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 5%; 
+  background-color: #262525;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box; /*  evita que el padding sume más ancho */
+}
+
+/* Logo + título */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-container .logo {
+  width: 50px;
+  height: auto;
+}
+
+/* Links del navbar */
+.nav-links {
+  display: flex;
+  justify-content: center; /*  centra los links dentro de su zona */
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+  flex: 1;
+  margin-right: 120px;
+}
+
+/* Cada link */
+.nav-links a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #e38e04;
+}
+
+.nav-links .active {
+  color: #ff9900;
+  font-weight: bold;
+}
+
+/* Botón de contacto */
+.cta button {
+  background-color: #e38e04;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta button:hover {
+  background-color: #ffae00;
+  transform: translateY(-2px);
+}
+
+.logo-container h2{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin: 0;
+}
+

@@ -1,0 +1,88 @@
+/* Fondo solo para login */
+.login-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../assets/loginIMG/imagenLogin.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Contenedor del formulario */
+.login-container {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 30px 40px;
+  border-radius: 10px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+/* Etiquetas y campos */
+form label {
+  color: white;
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Botones */
+button {
+  padding: 10px 25px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px auto;
+  display: block;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+/* Botones de enlace */
+.link-btn {
+  text-decoration: none;
+  color: white;
+  background-color: #0069d9;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+}
+
+.link-btn:hover {
+  background-color: #0069d9;
+}
+
+/* Texto debajo de botones */
+.register-label {
+  text-align: center;
+  color: white;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Mensajes de error */
+.error {
+  color: red;
+  font-size: 0.9em;
+  display: block;
+  margin-bottom: 8px;
+}

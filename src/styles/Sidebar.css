@@ -1,0 +1,97 @@
+/* Contenedor de la barra (mismo look que artistas) */
+.buscar-bandas-page{
+  display: flex;
+  justify-content: center;
+  gap:50px;
+  padding:40px;
+}
+
+.sidebar-buscar {
+  display: flex;
+  flex-wrap: wrap;                 /* permite saltar de línea */
+  justify-content: center;         /* centrado como artistas */
+  align-items: center;
+  gap: 24px 50px;                  /* mismo espaciamiento */
+  width: 100%;
+  padding: 30px 40px;
+  background-color: #262525;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  color: #fff;
+}
+
+/* Lista de filtros en línea, con wrap */
+.sidebar-buscar .filtros-lista {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;                 /* se apila en moviles */
+  gap: 24px 50px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+
+.sidebar-buscar .filtros-lista li {
+  display: flex;
+  align-items: center;
+  gap: 8px;                        /* espacio entre texto e input */
+  color: #fff;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Inputs oscuros */
+.sidebar-buscar input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: #111;
+  color: #fff;
+  min-width: 190px;                /* ancho cómodo */
+}
+
+.sidebar-buscar input::placeholder {
+  color: #9a9a9a;
+}
+
+
+.sidebar-buscar .genero {
+  margin-left: 15px;
+}
+
+/* Botones: mismo estilo y hover que artistas */
+.sidebar-buscar button {
+  padding: 8px 16px;
+  background-color: #e38e04;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sidebar-buscar button:hover {
+  background-color: #ff9f00;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+}
+
+/* Responsive como artistas */
+@media (max-width: 900px) {
+  .sidebar-buscar {
+    justify-content: flex-start;
+    gap: 16px 20px;
+    padding: 20px;
+  }
+  .sidebar-buscar .filtros-lista {
+    gap: 16px 20px;
+    justify-content: flex-start;
+  }
+  .sidebar-buscar .filtros-lista li {
+    width: 100%;                   /* cada campo toma una fila */
+  }
+}
