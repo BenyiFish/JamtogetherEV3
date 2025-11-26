@@ -77,7 +77,7 @@ form button[type="button"]:hover {
 
 /* Mensajes de error */
 .error {
-  color: red;
+  color: yellow;
   font-size: 0.9em;
   display: block;
   margin-bottom: 8px;

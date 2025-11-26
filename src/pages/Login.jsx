@@ -38,7 +38,7 @@ function Login() {
       localStorage.setItem('currentUser', JSON.stringify(response.data));
 
       alert('¡Inicio de sesión exitoso!');
-      navigate('/');
+      navigate('/buscar-bandas');
     })
     .catch((error) => {
      

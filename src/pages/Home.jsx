@@ -1,18 +1,39 @@
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import "../styles/hero.css"
 import Footer from "../components/Footer";
-import "../styles/footer.css"
-import { Artistas, Bandas } from "../data/data.js";
 import BandasDestacadas from "../components/BandasDestacadas";
 import ArtistasDestacados from "../components/ArtistasDestacados.jsx";
-import "../styles/artistasDestacados.css"
-import "../styles/bandasDestacadas.css"
-import "../styles/home.css"
-import React from "react";
+import axios from "axios"; // Importamos Axios
+import "../styles/hero.css";
+import "../styles/footer.css";
+import "../styles/artistasDestacados.css";
+import "../styles/bandasDestacadas.css";
+import "../styles/home.css";
 
 export default function Home() {
-  const navigate = useNavigate(); // Hook de React Router
+  const navigate = useNavigate();
+  
+  // Estados para guardar los datos de la BD
+  const [artistasHome, setArtistasHome] = useState([]);
+  const [bandasHome, setBandasHome] = useState([]);
+
+  useEffect(() => {
+   
+    axios.get("http://localhost:8080/api/public/artistas")
+      .then(res => {
+      
+        setArtistasHome(res.data.slice(0, 5));
+      })
+      .catch(err => console.error("Error cargando artistas en Home:", err));
+
+
+    axios.get("http://localhost:8080/api/public/bandas")
+      .then(res => {
+        setBandasHome(res.data.slice(0, 5));
+      })
+      .catch(err => console.error("Error cargando bandas en Home:", err));
+  }, []);
 
   return (
     <div className="app-container">
@@ -40,13 +61,12 @@ export default function Home() {
           </div>
         </section>
 
-        <ArtistasDestacados artistas={Artistas} />
-        <BandasDestacadas bandas={Bandas} layout="vertical" titulo="Bandas Destacadas" />
+    
+        <ArtistasDestacados artistas={artistasHome} titulo="Artistas Destacados" />
+        <BandasDestacadas bandas={bandasHome} layout="vertical" titulo="Bandas Destacadas" />
       </main>
 
       <Footer />
     </div>
   );
 }
-
-
