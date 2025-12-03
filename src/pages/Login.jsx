@@ -13,41 +13,47 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     
-   
+    // Limpiar errores previos
     setErrorUsername('');
     setErrorPassword('');
 
     const usernameInput = username.trim();
     const passwordInput = password.trim();
 
- 
+    // Validaciones locales
     if (usernameInput === '' || passwordInput === '') {
-      alert('Por favor, completa todos los campos'); 
+      // alert('Por favor, completa todos los campos'); // Opcional si ya muestras errores abajo
       if (usernameInput === '') setErrorUsername('Campo requerido');
       if (passwordInput === '') setErrorPassword('Campo requerido');
       return;
     }
 
-  
+    // Petición al Backend
     axios.post("http://localhost:8080/api/auth/login", {
       username: usernameInput,
       password: passwordInput
     })
     .then((response) => {
+      // --- ÉXITO ---
       
+      // 1. Guardar el objeto Usuario (para tener sus datos: nombre, email, etc.)
       localStorage.setItem('currentUser', JSON.stringify(response.data));
 
+      // 2. Guardar el Token (IMPORTANTE: Esto es lo que revisa tu Home.jsx para el botón)
+      // Como el backend aún no manda JWT, usamos un string simple o el ID del usuario
+      localStorage.setItem('token', 'sesion_activa'); 
+
       alert('¡Inicio de sesión exitoso!');
-      navigate('/buscar-bandas');
+      navigate('/'); // Redirigir al Home para ver los cambios
     })
     .catch((error) => {
-     
+      // --- ERROR ---
       console.error("Error en login:", error);
 
       if (error.response && error.response.status === 401) {
-        
-        alert('Usuario o contraseña incorrectos'); 
-        setErrorPassword('Credenciales inválidas');
+        // Credenciales malas
+        // alert('Usuario o contraseña incorrectos'); 
+        setErrorPassword('Usuario o contraseña incorrectos');
       } else if (error.code === "ERR_NETWORK") {
         alert('No se pudo conectar con el servidor. Revisa que el backend esté corriendo.');
       } else {
