@@ -1,16 +1,39 @@
-# React + Vite
+Benjamin Inostroza Blamey
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# JamTogether
 
-Currently, two official plugins are available:
+JamTogether es una pagina construida con React y Vite que facilita la búsqueda y visualización de artistas y bandas. Es una interfaz orientada a mostrar artistas destacados. 
+**Características principales**
+- **Buscar artistas y bandas:** páginas dedicadas para localizar artistas y bandas con listados y tarjetas destacadas.
+- **Autenticación básica:** páginas de `Login` y `Registro` (simulación de flujo de autenticación en frontend).
+- **Páginas administradas:** una vista `Admin` para funciones administrativas (interfaz, no necesariamente backend).
+- **Componentes reutilizables:** `Navbar`, `Footer`, `SideBarBuscarArtistas`, `SidebarBuscarBandas`, etc.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Tecnologías**
+- **Framework:** React (v19)
+- **Bundler/Dev:** Vite
+- **Routing:** React Router
+- **HTTP:** Axios (para llamadas a APIs si se integra un backend)
+- **Testing:** Vitest y Testing Library
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+**Estructura del proyecto (resumen relevante)**
+- `src/pages/` : páginas principales (`Home`, `BuscarArtistas`, `BuscarBandas`, `Login`, `Registro`, `Admin`).
+- `src/components/` : componentes reutilizables (`Navbar`, `Footer`, tarjetas destacadas, sidebars).
+- `src/assets/` : imágenes y recursos estáticos.
+- `src/styles/` : hojas de estilo CSS por componente/página.
+- `tests/` : tests unitarios y de componentes (Vitest + Testing Library).
+
+**Cómo funciona (flujo básico)**
+- Al abrir la app, `Home` muestra contenido destacado (artistas/bandas).
+- Desde `BuscarArtistas` o `BuscarBandas` el usuario puede explorar listados — los datos se consumen desde `src/data/data.js` o desde una API externa si se integra.
+- Los formularios de `Login` y `Registro` permiten capturar credenciales; actualmente la lógica puede ser manejada en frontend y debería conectarse a un backend real para autenticación persistente.
+
+**Notas para desarrolladores**
+- Las rutas y la protección de rutas se encuentran en `src/components/ProteccionRuta.jsx`.
+- Para integrar un backend, configure llamadas con `axios` desde los componentes o un servicio centralizado.
+- Mantener estilos en `src/styles/` y componentes separados facilita el mantenimiento.
+
