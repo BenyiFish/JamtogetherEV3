@@ -15,7 +15,7 @@ export default function Admin() {
 
   
   const cargarUsuarios = () => {
-    axios.get("http://localhost:8080/api/auth/usuarios")
+    axios.get("http://3.219.140.208:8080/api/auth/usuarios")
       .then((response) => {
         setUsuarios(response.data);
       })
@@ -30,7 +30,7 @@ export default function Admin() {
     if (window.confirm(`¿Estás seguro de que quieres eliminar a ${usernameToDelete}?`)) {
       
     
-      axios.delete(`http://localhost:8080/api/auth/usuarios/${usernameToDelete}`)
+      axios.delete(`http://3.219.140.208:8080/api/auth/usuarios/${usernameToDelete}`)
         .then(() => {
           alert("Usuario eliminado correctamente.");
         

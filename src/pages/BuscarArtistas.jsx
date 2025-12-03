@@ -44,7 +44,7 @@ export default function BuscarArtistas() {
   }, []);
 
   const cargarArtistas = () => {
-    axios.get("http://localhost:8080/api/public/artistas")
+    axios.get("http://3.219.140.208:8080/api/public/artistas")
       .then((response) => {
         setTodosLosArtistas(response.data);
         setArtistasFiltrados(response.data);
@@ -79,8 +79,8 @@ export default function BuscarArtistas() {
       return;
     }
 
-    axios.post("http://localhost:8080/api/public/artistas", nuevoArtista)
-      .then((response) => {
+    axios.post("http://3.219.140.208:8080/api/public/artistas", nuevoArtista)
+      .then(() => {
         alert("¡Artista publicado con éxito!");
         setMostrarModal(false);
         setNuevoArtista({ nombre: "", instrumento: "", ciudad: "", descripcion: "", image: "" });

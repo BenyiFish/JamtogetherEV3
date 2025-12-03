@@ -95,7 +95,7 @@ function Registro() {
       };
 
   
-      axios.post("http://localhost:8080/api/auth/registro", nuevoUsuario)
+      axios.post("http://3.219.140.208:8080/api/auth/registro", nuevoUsuario)
         .then(() => {
          
           alert('¡Registro exitoso! Ahora puedes iniciar sesión.');

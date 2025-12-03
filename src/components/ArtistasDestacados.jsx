@@ -9,7 +9,10 @@ export default function ArtistasDestacados({
 }) {
   const [artistaSeleccionado, setArtistaSeleccionado] = useState(null);
 
- 
+  const handleImageError = (e) => {
+    e.target.onerror = null; // evita bucles infinitos
+    e.target.src = placeholderImage;
+  };
   // Si la lista está vacía, mostramos un mensaje claro en pantalla.
   if (!artistas || artistas.length === 0) {
     return (

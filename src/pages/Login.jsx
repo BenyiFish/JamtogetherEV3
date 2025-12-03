@@ -29,7 +29,7 @@ function Login() {
     }
 
     // Petición al Backend
-    axios.post("http://localhost:8080/api/auth/login", {
+    axios.post("http://3.219.140.208:8080/api/auth/login", {
       username: usernameInput,
       password: passwordInput
     })
@@ -39,7 +39,7 @@ function Login() {
       // 1. Guardar el objeto Usuario (para tener sus datos: nombre, email, etc.)
       localStorage.setItem('currentUser', JSON.stringify(response.data));
 
-      // 2. Guardar el Token (IMPORTANTE: Esto es lo que revisa tu Home.jsx para el botón)
+      // 2. Guardar el Token 
       // Como el backend aún no manda JWT, usamos un string simple o el ID del usuario
       localStorage.setItem('token', 'sesion_activa'); 
 

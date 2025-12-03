@@ -37,7 +37,7 @@ export default function BuscarBandas() {
   }, []);
 
   const cargarBandas = () => {
-    axios.get("http://localhost:8080/api/public/bandas")
+    axios.get("http://3.219.140.208:8080/api/public/bandas")
       .then((response) => {
         setTodasLasBandas(response.data);
         setBandasFiltradas(response.data);
@@ -71,8 +71,8 @@ export default function BuscarBandas() {
       return;
     }
 
-    axios.post("http://localhost:8080/api/public/bandas", nuevaBanda)
-      .then((response) => {
+    axios.post("http://3.219.140.208:8080/api/public/bandas", nuevaBanda)
+      .then(() => {
         alert("¡Banda publicada con éxito!");
         setMostrarModal(false);
         setNuevaBanda({ nombre: "", estilo: "", ciudad: "", descripcion: "", image: "" });

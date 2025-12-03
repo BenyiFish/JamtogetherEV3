@@ -29,14 +29,14 @@ export default function Home() {
     }
 
     // Carga de Artistas
-    axios.get("http://localhost:8080/api/public/artistas")
+    axios.get("http://3.219.140.208:8080/api/public/artistas")
       .then(res => {
         setArtistasHome(res.data.slice(0, 5));
       })
       .catch(err => console.error("Error cargando artistas en Home:", err));
 
     // Carga de Bandas
-    axios.get("http://localhost:8080/api/public/bandas")
+    axios.get("http://3.219.140.208:8080/api/public/bandas")
       .then(res => {
         setBandasHome(res.data.slice(0, 5));
       })
